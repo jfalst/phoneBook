@@ -9,6 +9,8 @@ function createContact(){
     $pname = $_POST['pname'];
     $ename = $_POST['email'];
 
+    
+
     $sql = "INSERT INTO users (last_name, first_name, phone, email)
 VALUES ('$lname', '$fname', '$pname', '$ename')";
 

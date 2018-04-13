@@ -24,19 +24,19 @@ if(isset($_POST['submit'])){
   <form action="newUser.php" method="post">
     <div class="form-group">
       <label for="lastname">Last Name:</label>
-      <input type="text" class="form-control" placeholder="Enter Last Name" name="lname">
+      <input type="text" class="form-control" placeholder="Enter Last Name" name="lname" required pattern='[a-zA-Z]*'>
     </div>
     <div class="form-group">
       <label for="firstname">First Name:</label>
-      <input type="text" class="form-control" placeholder="Enter First Name" name="fname">
+      <input type="text" class="form-control" placeholder="Enter First Name" name="fname" required pattern='[a-zA-Z]*'>
     </div>
     <div class="form-group">
       <label for="phone">Phone:</label>
-      <input type="text" class="form-control" placeholder="Enter Phone Number" name="pname">
+      <input type="text" class="form-control" placeholder="Enter 10 Digit Phone Number" name="pname" required pattern="[0-9]{10}">
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="text" class="form-control" placeholder="Enter Email" name="email">
+      <input type="email" class="form-control" placeholder="Enter Email" name="email"required>
     </div>
   
     <button type="submit" name="submit" class="btn btn-default">Submit</button>
