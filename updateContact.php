@@ -44,24 +44,24 @@ if(isset($_GET['edit'])){
     <div class="form-group">
     
       <label for="lastname">Last Name:</label>
-      <input value="<?php if(isset($last)) echo $last ?> " type="text" class="form-control" name="lname" required pattern='[a-zA-Z]*'>
+      <input value="<?php if(isset($last)) echo rtrim($last)?> "type="text" class="form-control" name="lname" required pattern='[a-zA-Z]*'>
     </div>
     <div class="form-group">
       <label for="firstname">First Name:</label>
-      <input value="<?php if(isset($first)) echo $first ?> "type="text" class="form-control" name="fname" required pattern='[a-zA-Z]*'>
+      <input value="<?php if(isset($first)) echo$first?> "type="text" class="form-control" name="fname" required pattern='[a-zA-Z]*'>
     </div>
     <div class="form-group">
       <label for="phone">Phone:</label>
-      <input value="<?php if(isset($phone)) echo $phone ?> " type="text" class="form-control" name="pname" required pattern = "[0-9]{10}" >
+      <input value="<?php if(isset($phone)) echo$phone?> " type="text" class="form-control" name="pname" required pattern='[0-9]{10}'>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input value="<?php if(isset($mail)) echo $mail ?> "type="email" class="form-control"  name="email" required>
+      <input value="<?php if(isset($mail)) echo$mail?> "type="email" class="form-control"  name="email" required>
       
     </div>
     <div class="form-group">
       <label for="email"></label>
-      <input value="<?php if(isset($contactId)) echo $contactId ?> "type="hidden" class="form-control"  name="id">
+      <input value="<?php if(isset($contactId)) echo $contactId?> "type="hidden" class="form-control"  name="id">
       
     </div>
   

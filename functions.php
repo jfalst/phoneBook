@@ -4,12 +4,13 @@ include 'connections.php';
 
 function createContact(){
     global $conn;
-    $lname = $_POST['lname'];
-    $fname = $_POST['fname'];
-    $pname = $_POST['pname'];
-    $ename = $_POST['email'];
+    //validate data on server side in addition to client side validation
+    $lname = test_input($_POST["lname"]);
+    $fname = test_input($_POST["fname"]);
+    $pname = test_input($_POST['pname']);
+    $ename = test_input($_POST["email"]);
 
-    
+// after data is validated, do sql Insert
 
     $sql = "INSERT INTO users (last_name, first_name, phone, email)
 VALUES ('$lname', '$fname', '$pname', '$ename')";
@@ -38,10 +39,11 @@ function deleteContact(){
 
 function updateContact(){
     global $conn;
-    $the_last_name = $_POST['lname'];
-    $the_first_name = $_POST['fname'];
-    $the_phone_num = $_POST['pname'];
-    $the_email = $_POST['email'];
+    
+    $the_last_name = test_input($_POST["lname"]);
+    $the_first_name = test_input($_POST['fname']);
+    $the_phone_num = test_input($_POST['pname']);
+    $the_email = test_input($_POST['email']);
     $the_id = $_POST['id'];
 
     $updateQuery = "UPDATE users SET last_name = '$the_last_name', first_name = '$the_first_name',
@@ -53,10 +55,17 @@ function updateContact(){
         echo "<script>window.location.assign('phoneBookMain.php');</script>";
 
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $updateQuery . "<br>" . $conn->error;
     }
 
 
+}
+
+function test_input($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
  
 ?>
