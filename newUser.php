@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" placeholder="Enter Email" name="email"required>
+      <input type="email" class="form-control" placeholder="Enter Email up to 32 characters" name="email"required >
     </div>
   
     <button type="submit" name="submit" class="btn btn-default">Submit</button>

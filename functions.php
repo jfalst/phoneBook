@@ -49,7 +49,7 @@ function updateContact(){
     $updateQuery = "UPDATE users SET last_name = '$the_last_name', first_name = '$the_first_name',
     phone = '$the_phone_num', email = '$the_email'
     WHERE id = $the_id";
-    $conn->query($updateQuery);
+    //$conn->query($updateQuery);
     if ($conn->query($updateQuery) === TRUE) {
         echo "<script>alert('Contact was updated successfully')</script>";
         echo "<script>window.location.assign('phoneBookMain.php');</script>";
