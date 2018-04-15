@@ -2,7 +2,16 @@
 include 'connections.php';
 include 'functions.php';
 if(isset($_POST['submit'])){
-  createContact();
+  $email= $_POST['email'];
+
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "<script>alert('You entered an invalid email')</script>";
+  }
+  else{
+    createContact();
+
+  }
+  
 }
 ?>
 
